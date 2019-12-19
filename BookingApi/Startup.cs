@@ -27,6 +27,7 @@ namespace BookingApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //HELLO TEST
             services.AddDbContext<BookingDBContext>(options =>
                 options.UseSqlServer("Server=./;Database=BookingDB;Trusted_Connection=False;"));
             services.AddControllers();
