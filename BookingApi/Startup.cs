@@ -28,7 +28,7 @@ namespace BookingApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<BookingDBContext>(options =>
-                options.UseSqlServer("Server=DESKTOP-IK79C5P;Database=BookingDB;Trusted_Connection=True;"));
+                options.UseSqlServer("Server=./;Database=BookingDB;Trusted_Connection=False;"));
             services.AddControllers();
         }
 
