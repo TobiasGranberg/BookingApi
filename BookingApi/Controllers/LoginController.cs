@@ -41,7 +41,7 @@ namespace BookingApi.Controllers
             return user;
         }
 
-        [Route("login/register")]
+        [Route("register")]
         [HttpPost]
         public bool Register(User user)
         {
