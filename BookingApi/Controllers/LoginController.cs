@@ -18,7 +18,6 @@ namespace BookingApi.Controllers
         {
             _context = context;
         }
-
         [HttpPost]
         public ActionResult<bool> Login(string email, string password)
         {
