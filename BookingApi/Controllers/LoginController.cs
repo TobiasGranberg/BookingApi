@@ -19,26 +19,16 @@ namespace BookingApi.Controllers
             _context = context;
         }
 
-        [HttpPost]
-        public ActionResult<User>Login(string email, string password)
+        [HttpGet]
+        public ActionResult<bool> Login(string email, string password)
         {
-            //User usr = new User();
-            //usr.Fname = "david";
-            //usr.Lname = "hoppsan";
-            //usr.Id = 3;
-            //usr.Password = "password";
-            //usr.Email = "email";
-
-            //var user = _context.User.FirstOrDefault(m => m.Email == email);
-            //if (user != null)
-            //{
-            //    if (user.Password == password) return user;
-            //}
-
-            User user = _context.User.Where(m => m.Email == email).FirstOrDefault();
-            System.Diagnostics.Debug.WriteLine("TEST: " + email);
-
-            return user;
+            bool result = false;
+            User user = _context.User.Where(e => e.Email == email && e.Password == password).FirstOrDefault();
+            if (user != null)
+            {
+                result = true;
+            }
+            return result;
         }
     }
 }
