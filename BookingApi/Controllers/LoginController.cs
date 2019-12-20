@@ -19,10 +19,10 @@ namespace BookingApi.Controllers
             _context = context;
         }
         [HttpPost]
-        public ActionResult<bool> Login(string email, string password)
+        public ActionResult<bool> Login(LoginModel loginModel)
         {
             bool result = false;
-            User user = _context.User.Where(e => e.Email == email && e.Password == password).FirstOrDefault();
+            User user = _context.User.Where(e => e.Email == loginModel.email && e.Password == loginModel.password).FirstOrDefault();
             if (user != null)
             {
                 result = true;
