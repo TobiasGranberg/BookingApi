@@ -19,7 +19,7 @@ namespace BookingApi.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        [HttpPost]
         public ActionResult<bool> Login(string email, string password)
         {
             bool result = false;
