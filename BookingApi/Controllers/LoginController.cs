@@ -30,5 +30,21 @@ namespace BookingApi.Controllers
             }
             return result;
         }
+
+        [Route("register")]
+        [HttpPost]
+        public bool Register(User user)
+        {
+            try
+            {
+                _context.User.Add(user);
+                _context.SaveChangesAsync();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }
